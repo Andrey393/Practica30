@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //sv= findViewById(R.id.spectraView);
+        sv= findViewById(R.id.spectraView2);
         context = this;
 
         sp=findViewById(R.id.spinner);
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
         };
         req.send("http://spectra.spbcoit.ru/lab/spectra/api/rpc/get_elements","{}");
 
-        b= findViewById(R.id.button);
+        b= findViewById(R.id.buttonLoad);
         b.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -100,7 +100,8 @@ public class MainActivity extends AppCompatActivity
                     }
                 };
                 sv.lines.clear();
-                req.send("http://spectra.spbcoit.ru/lab/spectra/api/rpc/get_lines","{\"atomic_num\":" + String.valueOf(el.atomic_num)+"}");
+                req.send("http://spectra.spbcoit.ru/lab/spectra/api/rpc/get_lines","{\"atomic_num\": "
+                        + String.valueOf(el.atomic_num) + "}");
             }
         });
         sv.ctx=this;

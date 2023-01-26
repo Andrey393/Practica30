@@ -7,7 +7,7 @@ import org.json.JSONObject;
 
 public class SpecLine
 {
-    public float wavelenght;
+    public float wavelength;
     float rel_intensity;
 
     int red;
@@ -16,7 +16,7 @@ public class SpecLine
 
     public SpecLine(JSONObject obj) throws JSONException
     {
-        wavelenght = (float) obj.getDouble("wavelenght");
+        wavelength = (float) obj.getDouble("wavelength");
         rel_intensity = (float) obj.getDouble("rel_intensity");
 
         red=(int) (obj.getDouble("red")*255.0f);

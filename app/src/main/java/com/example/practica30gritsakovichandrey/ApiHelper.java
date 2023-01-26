@@ -22,13 +22,14 @@ public class ApiHelper
     {
         URL url=new URL(req);
         HttpURLConnection con =(HttpURLConnection) url.openConnection();
+
         con.setRequestProperty("Content-Type","application/json");
         con.setRequestProperty("accept","application/json");
         con.setRequestMethod("POST");
 
         con.setDoOutput(true);
-        BufferedOutputStream out= new BufferedOutputStream(con.getOutputStream());
-        out.write(body.getBytes());
+        BufferedOutputStream out =new BufferedOutputStream(con.getOutputStream());
+         out.write(body.getBytes());
         out.flush();
 
         BufferedInputStream inp= new BufferedInputStream(con.getInputStream());

@@ -8,10 +8,38 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <SurfaceView
-        android:id="@+id/spectraView"
+    <com.example.practica30gritsakovichandrey.SpectraView
+        android:id="@+id/spectraView2"
         android:layout_width="match_parent"
-        android:layout_height="168dp" />
+        android:layout_height="131dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="13dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="zoom_out"
+            android:text="-" />
+
+        <Space
+            android:layout_width="21dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="13dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="zoom_in"
+            android:text="+" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,23 +47,9 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="-" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Element" />
@@ -47,7 +61,7 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonLoad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

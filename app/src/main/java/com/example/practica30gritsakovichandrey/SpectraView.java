@@ -69,7 +69,7 @@ public class SpectraView extends SurfaceView
         {
             obj.put("nm_from", wlen_min);
             obj.put("nm_to", wlen_max);
-            obj.put("step", steps);
+            obj.put("steps", steps);
         }
         catch (JSONException ex){}
 
@@ -133,7 +133,7 @@ public class SpectraView extends SurfaceView
 
         img_w = w;
 
-        canvas.drawColor(Color.BLACK);
+        canvas.drawColor(Color.TRANSPARENT);
 
         if(have_background == false)
             download_background(this,w);
@@ -159,7 +159,7 @@ public class SpectraView extends SurfaceView
         for(int i =0; i<lines.size();i++)
         {
             SpecLine sl= lines.get(i);
-            float x =map(sl.wavelenght,wlen_min,wlen_max,0,w-1);
+            float x =map(sl.wavelength,wlen_min,wlen_max,0,w-1);
             sl.setPaintColor(p);
             canvas.drawLine(x,0,x,h,p);
         }
